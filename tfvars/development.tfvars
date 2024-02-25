@@ -30,8 +30,8 @@ config = {
       location =  "US"
     }
     storage_bucket_object = {
-      name = "index.zip"
-      source = "../function"
+      name = "index.txt"
+      source = "./function"
     }
     cloudfunctions_function = {
       name = "data-expose"
