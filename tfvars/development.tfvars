@@ -22,7 +22,7 @@ config = {
   // Cloud Functions
   bq_query = {
     storage_bucket = {
-      name = "latam-cloudfunctions-01-mariocalipo"
+      name = "latam-bq_query-mariocalipo"
       location =  "US"
     }
     storage_bucket_object = {
@@ -41,7 +41,7 @@ config = {
   }
   http_response = {
     storage_bucket = {
-      name = "latam-cloudfunctions-01-mariocalipo"
+      name = "latam-http_response-mariocalipo"
       location =  "US"
     }
     storage_bucket_object = {
