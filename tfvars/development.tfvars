@@ -55,7 +55,7 @@ config = {
       runtime = "python310"
       available_memory_mb = "128"
       trigger_http = "true"
-      entry_point = "bq_query"
+      entry_point = "http_response"
     }
   }
   // Compute Instances

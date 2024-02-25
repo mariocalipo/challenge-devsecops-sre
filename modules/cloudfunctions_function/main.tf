@@ -62,15 +62,3 @@ resource "google_project_iam_member" "cloudfunctions_artifact_registry_reader" {
   role    = "roles/artifactregistry.reader"
   member  = "serviceAccount:${google_cloudfunctions_function.main.service_account_email}"
 }
-
-resource "google_project_iam_binding" "cloudfunctions_artifact_registry_list" {
-  project = data.google_project.current.id
-  role    = "roles/artifactregistry.repositories.list"
-  members = ["serviceAccount:${google_cloudfunctions_function.main.service_account_email}"]
-}
-
-resource "google_project_iam_binding" "cloudfunctions_artifact_registry_get" {
-  project = data.google_project.current.id
-  role    = "roles/artifactregistry.repositories.get"
-  members = ["serviceAccount:${google_cloudfunctions_function.main.service_account_email}"]
-}
