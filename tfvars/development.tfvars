@@ -3,6 +3,7 @@
 config = {
   // Compute Instances
   ingestion_instance = {
+    instance_count = "1"
     name         = "ingestion"
     machine_type = "e2-medium"
     zone         = "us-central1"

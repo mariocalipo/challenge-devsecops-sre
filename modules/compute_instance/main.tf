@@ -3,7 +3,7 @@
 resource "google_compute_instance" "main" {
   count = var.compute_instance.instance_count
 
-  name         = "${var.config.name}-${count.index}"
+  name         = "${var.compute_instance.name}-${count.index}"
   machine_type = var.compute_instance.machine_type
   zone         = var.compute_instance.zone
 
