@@ -31,10 +31,10 @@ config = {
     }
     storage_bucket_object = {
       name = "index.zip"
-      source = "./function/"
+      source = "./function"
     }
     cloudfunctions_function = {
-      name = "myfunction"
+      name = "data-expose"
       description = "latamprocess"
       runtime = "nodejs16"
       available_memory_mb = "128"
