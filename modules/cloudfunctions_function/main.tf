@@ -18,6 +18,13 @@ resource "google_project_service" "cloud_functions" {
   disable_dependent_services = false
 }
 
+resource "google_project_service" "artifact_registry" {
+  project = data.google_project.current.id
+  service = "artifactregistry.googleapis.com"
+
+  disable_dependent_services = false
+}
+
 resource "google_cloudfunctions_function" "main" {
   name        = var.cloudfunctions_function.name
   description = var.cloudfunctions_function.description
@@ -29,7 +36,7 @@ resource "google_cloudfunctions_function" "main" {
   trigger_http          = var.cloudfunctions_function.trigger_http
   entry_point           = var.cloudfunctions_function.entry_point
 
-  depends_on = [google_project_service.cloud_functions]
+  depends_on = [google_project_service.cloud_functions, google_project_service.artifact_registry]
 }
 
 // IAM entry for all users to invoke the function
