@@ -15,7 +15,7 @@ resource "google_bigquery_dataset" "main" {
 // Creates a table resource in a dataset for Google BigQuery
 
 resource "google_bigquery_table" "main" {
-  dataset_id = google_bigquery_dataset.main.id
+  dataset_id = google_bigquery_dataset.main.dataset_id
   table_id   = var.bigquery_table.table_id
 
   time_partitioning {

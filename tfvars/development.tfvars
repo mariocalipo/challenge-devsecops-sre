@@ -13,14 +13,14 @@ config = {
   // BigQuery
   bigquery-01 = {
     bigquery_dataset = {
-      dataset_id = "test01"
-      friendly_name = "test01"
+      dataset_id = "latam_devops_dataset"
+      friendly_name = "latam_devops_dataset"
       description = "Database for Data Analysis"
       location = "US"
       default_table_expiration_ms = "3600000"
     }
     bigquery_table = {
-      table_id = "test01"
+      table_id = "latam_devops_dataset" // Same as "bigquery_dataset > dataset_id"
     }
   }
   // Compute Instances
