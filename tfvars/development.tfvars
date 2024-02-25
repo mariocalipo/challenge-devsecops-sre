@@ -24,7 +24,6 @@ config = {
     storage_bucket = {
       name = "latam-cloudfunctions-01-mariocalipo"
       location =  "US"
-      service_account_email = "mariohtcalipo@gmail.com"
     }
     storage_bucket_object = {
       name = "main.zip"
@@ -33,6 +32,7 @@ config = {
     cloudfunctions_function = {
       name = "data-expose"
       description = "latamprocess"
+      service_account_email = "mariohtcalipo@gmail.com"
       runtime = "python310"
       available_memory_mb = "128"
       trigger_http = "true"
