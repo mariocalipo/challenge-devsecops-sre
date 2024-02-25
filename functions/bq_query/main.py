@@ -4,7 +4,7 @@ def bq_query(request):
     client = bigquery.Client()
 
     
-    query = "SELECT * challenge-devsecops-sre.latam_devops_dataset.latam_devops_table"
+    query = "SELECT * `challenge-devsecops-sre.latam_devops_dataset.latam_devops_table`"
 
     query_job = client.query(query)
     results = query_job.result()

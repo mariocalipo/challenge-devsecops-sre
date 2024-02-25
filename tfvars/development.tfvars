@@ -27,7 +27,7 @@ config = {
     }
     storage_bucket_object = {
       name = "bq_query.zip"
-      source = "./functions/bq_query/bq_query.zip"
+      source = "./functions/bq_query/main.zip"
     }
     cloudfunctions_function = {
       name = "bq_query"
@@ -35,7 +35,7 @@ config = {
       service_account_email = ""
       runtime = "python310"
       available_memory_mb = "128"
-      trigger_http = "true"
+      trigger_http = "false"
       entry_point = "bq_query"
     }
   }
@@ -46,7 +46,7 @@ config = {
     }
     storage_bucket_object = {
       name = "http_response.zip"
-      source = "./functions/http_response/http_response.zip"
+      source = "./functions/http_response/main.zip"
     }
     cloudfunctions_function = {
       name = "http_response"
