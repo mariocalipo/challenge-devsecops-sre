@@ -1,5 +1,5 @@
+from bigquery_query.main import bq_query
 from flask import jsonify
-from bq_query import bq_query
 
 def http_response():
     try:

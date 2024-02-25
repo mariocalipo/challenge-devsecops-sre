@@ -26,8 +26,8 @@ config = {
       location =  "US"
     }
     storage_bucket_object = {
-      name = "bq_query.zip"
-      source = "./functions/bq_query/main.zip"
+      name = "bigquery_query.zip"
+      source = "./functions/bigquery_query/main.zip"
     }
     cloudfunctions_function = {
       name = "bq_query"
@@ -41,7 +41,7 @@ config = {
   }
   http_response = {
     storage_bucket = {
-      name = "latam-http_response-mariocalipo"
+      name = "c"
       location =  "US"
     }
     storage_bucket_object = {
