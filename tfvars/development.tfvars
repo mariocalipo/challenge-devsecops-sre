@@ -30,7 +30,7 @@ config = {
       location =  "US"
     }
     storage_bucket_object = {
-      name = "index.txt"
+      name = "index.zip"
       source = "./function"
     }
     cloudfunctions_function = {
