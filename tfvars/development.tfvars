@@ -20,7 +20,26 @@ config = {
       default_table_expiration_ms = "3600000"
     }
     bigquery_table = {
-      table_id = "latam_devops_dataset" // Same as "bigquery_dataset > dataset_id"
+      table_id = "latam_devops_table"
+    }
+  }
+  // Cloud Functions
+  cloudfunctions-01 = {
+    storage_bucket = {
+      name = "latam-cloudfunctions-01-mariocalipo"
+      location =  "US"
+    }
+    storage_bucket_object = {
+      name = "index.zip"
+      source = "./function/"
+    }
+    cloudfunctions_function = {
+      name = "myfunction"
+      description = "latamprocess"
+      runtime = "nodejs16"
+      available_memory_mb = "128"
+      trigger_http = "true"
+      entry_point = "helloGET"
     }
   }
   // Compute Instances
