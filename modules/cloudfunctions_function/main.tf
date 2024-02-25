@@ -35,6 +35,7 @@ resource "google_project_service" "cloudbuild" {
 resource "google_cloudfunctions_function" "main" {
   name        = var.cloudfunctions_function.name
   description = var.cloudfunctions_function.description
+  service_account_email = var.cloudfunctions_function.service_account_email
   runtime     = var.cloudfunctions_function.runtime
 
   available_memory_mb   = var.cloudfunctions_function.available_memory_mb
@@ -46,7 +47,7 @@ resource "google_cloudfunctions_function" "main" {
   depends_on = [google_project_service.cloud_functions, google_project_service.artifact_registry, google_project_service.cloudbuild]
 }
 
-// IAM entry for all users to invoke the function
+// IAM entries
 resource "google_cloudfunctions_function_iam_member" "main" {
   project        = google_cloudfunctions_function.main.project
   region         = google_cloudfunctions_function.main.region
@@ -54,4 +55,11 @@ resource "google_cloudfunctions_function_iam_member" "main" {
 
   role   = "roles/cloudfunctions.invoker"
   member = "allUsers"
+}
+
+resource "google_project_iam_member" "cloud_functions_reader" {
+  project = data.google_project.current.id
+  role    = "roles/artifactregistry.reader"
+
+  member = "serviceAccount:${google_cloudfunctions_function.main.service_account_email}"
 }
