@@ -15,7 +15,7 @@ resource "google_bigquery_dataset" "main" {
 // Creates a table resource in a dataset for Google BigQuery
 
 resource "google_bigquery_table" "main" {
-  dataset_id = google_bigquery_dataset.main.dataset_id
+  dataset_id = google_bigquery_dataset.main.id
   table_id   = var.bigquery_table.table_id
 
   time_partitioning {
@@ -43,22 +43,4 @@ resource "google_bigquery_table" "main" {
 ]
 EOF
 
-}
-
-resource "google_bigquery_table" "sheet" {
-  dataset_id = google_bigquery_dataset.default.dataset_id
-  table_id   = "sheet"
-
-  external_data_configuration {
-    autodetect    = true
-    source_format = "GOOGLE_SHEETS"
-
-    google_sheets_options {
-      skip_leading_rows = 1
-    }
-
-    source_uris = [
-      "https://docs.google.com/spreadsheets/d/123456789012345",
-    ]
-  }
 }
