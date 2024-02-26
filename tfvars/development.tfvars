@@ -35,7 +35,7 @@ config = {
       description = "Cloud Function for combined functionality"
       location = "us-central1"
       runtime = "python312"
-      available_memory_mb = "128"
+      available_memory_mb = "256M"
       trigger_http = "true"
       entry_point = "http_response"
     }
