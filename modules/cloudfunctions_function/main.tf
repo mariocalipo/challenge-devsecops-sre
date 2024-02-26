@@ -61,4 +61,6 @@ resource "google_project_iam_member" "cloudfunctions_artifact_registry_reader" {
   project = data.google_project.current.id
   role    = "roles/artifactregistry.reader"
   member  = "serviceAccount:${google_cloudfunctions_function.main.service_account_email}"
+
+  depends_on = [google_cloudfunctions_function.main]
 }
