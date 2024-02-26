@@ -26,8 +26,8 @@ config = {
       location =  "US"
     }
     storage_bucket_object = {
-      name = "bigquery_query.zip"
-      source = "./functions/bigquery_query.zip"
+      name = "bq_query.zip"
+      source = "./functions/bq_query/main.zip"
     }
     cloudfunctions_function = {
       name = "bq_query"
@@ -46,7 +46,7 @@ config = {
     }
     storage_bucket_object = {
       name = "http_response.zip"
-      source = "./functions/http_response.zip"
+      source = "./functions/http_response/main.zip"
     }
     cloudfunctions_function = {
       name = "http_response"
