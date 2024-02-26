@@ -14,10 +14,10 @@ def bq_query(request):
 
     return data
 
-def http_response():
+def http_response(request):
     try:
         # Call the bq_query function to get data
-        data = bq_query()
+        data = bq_query(request)
 
         # Customize the response format as needed
         response = {
