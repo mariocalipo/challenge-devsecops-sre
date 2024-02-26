@@ -36,6 +36,3 @@ def http_response(request):
             "message": str(e)
         }
         return jsonify(error_response), 500  # Return a 500 Internal Server Error status
-
-if __name__ == "__main__":
-    app.run(port=8080)

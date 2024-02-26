@@ -31,7 +31,7 @@ config = {
       source = "./functions/"
     }
     cloudfunctions_function = {
-      name = "combined_function_mariocalipo"
+      name = "combined-function-mariocalipo"
       description = "Cloud Function for combined functionality"
       location = "us-central1"
       runtime = "python312"
