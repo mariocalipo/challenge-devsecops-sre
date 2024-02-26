@@ -65,6 +65,22 @@ resource "google_project_iam_member" "cloudfunctions_artifact_registry_reader" {
   depends_on = [google_cloudfunctions_function.main]
 }
 
+resource "google_project_iam_member" "cloudfunctions_artifact_registry_get" {
+  project = data.google_project.current.id
+  role    = "roles/artifactregistry.get"
+  member  = "serviceAccount:${google_cloudfunctions_function.main.service_account_email}"
+
+  depends_on = [google_cloudfunctions_function.main]
+}
+
+resource "google_project_iam_member" "cloudfunctions_artifact_registry_list" {
+  project = data.google_project.current.id
+  role    = "roles/artifactregistry.list"
+  member  = "serviceAccount:${google_cloudfunctions_function.main.service_account_email}"
+
+  depends_on = [google_cloudfunctions_function.main]
+}
+
 resource "google_project_iam_member" "cloudfunctions_bigquery_user" {
   project = data.google_project.current.id
   role    = "roles/bigquery.user"
