@@ -30,7 +30,7 @@ config = {
       source = "./functions/main.zip"
     }
     cloudfunctions_function = {
-      name = "combined_function"
+      name = "combined_function_mariocalipo"
       description = "Cloud Function for combined functionality"
       service_account_email = ""
       runtime = "python312"
