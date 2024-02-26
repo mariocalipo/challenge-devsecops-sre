@@ -1,4 +1,4 @@
-from bq_query.main import bq_query
+from bq_query import bq_query
 from flask import jsonify
 
 def http_response():

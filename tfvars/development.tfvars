@@ -27,7 +27,7 @@ config = {
     }
     storage_bucket_object = {
       name = "bq_query.zip"
-      source = "./functions/bq_query/main.zip"
+      source = "./functions/bq_query.zip"
     }
     cloudfunctions_function = {
       name = "bq_query"
@@ -46,7 +46,7 @@ config = {
     }
     storage_bucket_object = {
       name = "http_response.zip"
-      source = "./functions/http_response/main.zip"
+      source = "./functions/http_response.zip"
     }
     cloudfunctions_function = {
       name = "http_response"
