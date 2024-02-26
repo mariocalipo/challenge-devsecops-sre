@@ -27,13 +27,13 @@ config = {
     }
     storage_bucket_object = {
       name = "main.zip"
-      source = "./functions/main.zip"
+      source = "./functions/"
     }
     cloudfunctions_function = {
       name = "combined_function_mariocalipo"
       description = "Cloud Function for combined functionality"
-      service_account_email = ""
-      runtime = "python310"
+      location = "us-central1"
+      runtime = "python312"
       available_memory_mb = "128"
       trigger_http = "true"
       entry_point = "http_response"
