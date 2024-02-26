@@ -1,5 +1,7 @@
 from google.cloud import bigquery
-from flask import jsonify
+from flask import Flask, jsonify
+
+app = Flask(__name__)
 
 def bq_query(request):
     client = bigquery.Client()
@@ -14,6 +16,7 @@ def bq_query(request):
 
     return data
 
+@app.route('/')
 def http_response(request):
     try:
         # Call the bq_query function to get data
@@ -33,3 +36,6 @@ def http_response(request):
             "message": str(e)
         }
         return jsonify(error_response), 500  # Return a 500 Internal Server Error status
+
+if __name__ == "__main__":
+    app.run(port=8080)
