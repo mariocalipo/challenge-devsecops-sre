@@ -1,0 +1,2 @@
+google-cloud-bigquery
+flask<3.0,>=1.0
