@@ -60,7 +60,7 @@ resource "google_cloudfunctions2_function" "main" {
     timeout_seconds    = 60
   }
 
-  depends_on = [google_project_service.cloud_functions, google_project_service.artifact_registry, google_project_service.cloudbuild]
+  depends_on = [google_project_service.cloud_functions, google_project_service.artifact_registry, google_project_service.cloudbuild, google_project_service.run]
 
 }
 
@@ -70,10 +70,14 @@ resource "google_cloud_run_service_iam_member" "member" {
   service  = google_cloudfunctions2_function.main.name
   role     = "roles/run.invoker"
   member   = "allUsers"
+
+  depends_on = [ google_cloudfunctions2_function.main ]
 }
 
 resource "google_storage_bucket_iam_member" "viewer" {
   bucket = google_storage_bucket.main.name
   role   = "roles/storage.objectViewer"
   member = var.storage_bucket.member
+
+  depends_on = [ google_storage_bucket.main ]
 }
