@@ -24,6 +24,7 @@ config = {
     storage_bucket = {
       name = "latam-combined-function-mariocalipo"
       location =  "US"
+      member = "user:mariohtcalipo@gmail.com"
     }
     storage_bucket_object = {
       name = "main.zip"

@@ -33,6 +33,11 @@ resource "google_project_service" "cloudbuild" {
   disable_dependent_services = false
 }
 
+resource "google_project_service" "run" {
+  project = data.google_project.current.id 
+  service = "run.googleapis.com"
+}
+
 resource "google_cloudfunctions2_function" "main" {
   name        = var.cloudfunctions_function.name
   location    = var.cloudfunctions_function.location
@@ -70,5 +75,5 @@ resource "google_cloud_run_service_iam_member" "member" {
 resource "google_storage_bucket_iam_member" "viewer" {
   bucket = google_storage_bucket.main.name
   role   = "roles/storage.objectViewer"
-  member = "allUsers"
+  member = var.storage_bucket.member
 }
