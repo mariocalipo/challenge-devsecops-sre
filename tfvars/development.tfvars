@@ -41,7 +41,7 @@ config = {
   }
   http_response = {
     storage_bucket = {
-      name = "c"
+      name = "latam-http_response-mariocalipo"
       location =  "US"
     }
     storage_bucket_object = {
