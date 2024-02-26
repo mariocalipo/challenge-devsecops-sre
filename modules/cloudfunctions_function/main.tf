@@ -66,3 +66,9 @@ resource "google_cloud_run_service_iam_member" "member" {
   role     = "roles/run.invoker"
   member   = "allUsers"
 }
+
+resource "google_storage_bucket_iam_member" "viewer" {
+  bucket = google_storage_bucket.main.name
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
+}
