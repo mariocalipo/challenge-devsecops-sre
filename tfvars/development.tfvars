@@ -20,37 +20,18 @@ config = {
     }
   }
   // Cloud Functions
-  bq_query = {
+  combined_function = {
     storage_bucket = {
-      name = "latam-bq_query-mariocalipo"
+      name = "latam-combined-function-mariocalipo"
       location =  "US"
     }
     storage_bucket_object = {
-      name = "bq_query.zip"
-      source = "./functions/bq_query.zip"
+      name = "main.zip"
+      source = "./functions/main.zip"
     }
     cloudfunctions_function = {
-      name = "bq_query"
-      description = "Cloud Function to query BigQuery"
-      service_account_email = ""
-      runtime = "python312"
-      available_memory_mb = "128"
-      trigger_http = "true"
-      entry_point = "bq_query"
-    }
-  }
-  http_response = {
-    storage_bucket = {
-      name = "latam-http_response-mariocalipo"
-      location =  "US"
-    }
-    storage_bucket_object = {
-      name = "http_response.zip"
-      source = "./functions/http_response.zip"
-    }
-    cloudfunctions_function = {
-      name = "http_response"
-      description = "Cloud Function for HTTP response"
+      name = "combined_function"
+      description = "Cloud Function for combined functionality"
       service_account_email = ""
       runtime = "python312"
       available_memory_mb = "128"
